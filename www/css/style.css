@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+ion-view.loginPage,
+ion-view.registerPage,
+ion-view.passwordRecoveryPage,
+ion-view.menuCourierPage {
+    background: #3e563e;
+}
+
