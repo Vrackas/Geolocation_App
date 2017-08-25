@@ -1,0 +1,17 @@
+﻿<ion-view>
+
+  <div class="bar bar-header bar-balanced">
+    <h1 class="title">Couriers</h1>
+  </div>
+
+  <ion-content class="has-header">
+    <div class="list">
+
+      <a class="item" ng-repeat="courier in couriers" ng-click="selectCourier(courier)" ui-sref="couriercontact">
+        {{courier.name}}
+      </a>
+
+    </div>
+  </ion-content>
+
+</ion-view>

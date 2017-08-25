@@ -53,6 +53,20 @@
                 controller: 'Menu_courier',
                 controllerAs: 'vm'
             })
+            
+            .state('couriercontact', {
+                url: 'operator/couriercontact',
+                templateUrl: 'templates/operator/couriercontact/couriercontact.html',
+                controller: 'CourierContact',
+                controllerAs: 'vm'
+            })
+
+            .state('courierslist', {
+                url: 'operator/courierslist',
+                templateUrl: 'templates/operator/courierslist/courierslist.html',
+                controller: 'CouriersList',
+                controllerAs: 'vm'
+            })
         ;
 
         $urlRouterProvider.otherwise('/login');
