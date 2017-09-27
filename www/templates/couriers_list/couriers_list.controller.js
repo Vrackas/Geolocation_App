@@ -12,10 +12,15 @@
         vm.list = list;
 
         vm.chooseUser = chooseUser;
+        vm.SendId = SendId;
 
         function chooseUser(item) {
             factoryMap.setCurrentUser(item);
             $state.go('menu_operator.geolocation');
+        }
+
+        function SendId (id){
+            $state.go('chat',{user_id: id.id});
         }
 
         // vm.selectCourier = function (courier) {

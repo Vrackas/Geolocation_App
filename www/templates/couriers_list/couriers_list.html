@@ -9,12 +9,12 @@
 
     <ion-list class="list">
       <ion-item class="item item-button-right" ng-repeat="courier in vm.list">
-          <h2  ui-sref="chat">{{courier.username}}</h2>
+          <h2 ng-click="vm.SendId(courier)">{{courier.username}}</h2>
           <button class="button button-icon icon" ng-click="vm.chooseUser(courier)"><i class="icon ion-location"></i></button>
       </ion-item>
 
     </ion-list>
 
   </ion-content>
-    <div class="bar bar-footer bar-stable"><i class="icon ion-plus icon-footer-add" ui-sref="courier_list_add"></i>
+    <div class="bar bar-footer bar-stable"><i class="icon ion-plus icon-footer-add" ui-sref="courier_list_add"></i></div>
 </ion-view>

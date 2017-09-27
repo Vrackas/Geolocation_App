@@ -27,7 +27,7 @@
 
         vm.avatarUsers = getMessages;
         console.log('asd', vm.avatarUsers);
-        vm.my_id = $localStorage.user.id;
+        // vm.my_id = $localStorage.id;
         vm.senderName = $stateParams.senderName;
         // vm.message.date = parseInt((new Date(vm.selectedDate).getTime() / 1000).toFixed(0));
         // vm.my_id =

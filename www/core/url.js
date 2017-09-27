@@ -7,7 +7,7 @@
     url.$inject = [];
 
     function url() {
-        var baseUrl = 'http://192.168.0.159git/api/web/v1/';
+        var baseUrl = 'http://192.168.0.159/api/web/v1/';
 
         return {
             user: {
@@ -18,7 +18,10 @@
                 GetCourierList: baseUrl + 'user/get-couriers',
                 GetAllLocation: baseUrl + 'user/all-users',
                 GetUserInfo: baseUrl + 'user/info-user',
-                GetAddCourier: baseUrl + 'user/add-courier'
+                GetAddCourier: baseUrl + 'user/add-courier',
+                GetDeleteCourier: baseUrl + 'user/delete-courier',
+                GetAllChatCourier: baseUrl + 'user/all'
+
             }
         }
     }

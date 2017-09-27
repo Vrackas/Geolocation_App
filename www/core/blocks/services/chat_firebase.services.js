@@ -9,9 +9,9 @@
             '$q',
             '$localStorage',
             '$rootScope',
-            '$state',
+            'getMessages',
             // 'SetMyProfile',
-            function (factoryChat, $stateParams, $q, $localStorage, $rootScope, $state) {
+            function (factoryChat, $stateParams, $q, $localStorage, $rootScope, getMessages) {
                 return {
                     newComment: newComment,
                     updateComment: updateComment,
@@ -23,12 +23,13 @@
                  */
 
                 function newComment(message) {
+                    vm.room_id = getMessages;
                     var commentDb = factoryChat.firebaseApp.database();
-                    var comment = commentDb.ref('dialogs/' + $stateParams.chat_id).push();
+                    var comment = commentDb.ref('dialogs/' +  vm.room_id).push();
                     comment.set({
                         message: message.text,
-                        user_id: $localStorage.user.id,
-                        user_name: $localStorage.user.username,
+                        user_id: $localStorage.id,
+                        user_name: $localStorage.username,
                         time: moment().format('MMM DD YYYY, HH:mm:ss'),
                         // avatar: SetMyProfile.data.avatar,
                     });
@@ -41,7 +42,7 @@
                  */
 
                 function updateComment(params) {
-                    var comments = firebase.database().ref("dialogs/" + params.chat_id);
+                    var comments = firebase.database().ref("dialogs/" + vm.room_id);
                     comments.on('value', function (snapshot) {
                         $rootScope.$broadcast('comments_load', {
                             comments: snapshot.val(),

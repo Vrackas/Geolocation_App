@@ -29,6 +29,9 @@
             UserService.SendUsername($scope.user)
                 .then(function (res) {
                     $localStorage.auth_key = res.user[0].auth_key;
+                    $localStorage.username = res.user[0].username;
+                    $localStorage.id = res.user[0].id;
+
                     $rootScope.role = res.user[0].role;
                     $rootScope.user = res.user[0];
 

@@ -17,10 +17,7 @@
             return UserService.getAddCourier({id: id}).then(function (res) {
                 console.log(res);
                 return res;
-
             });
-
-
         };
         vm.test = function (id) {
             console.log({id: id});

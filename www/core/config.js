@@ -92,9 +92,28 @@
                 }
             })
             .state('chat', {
-                url: '/chat',
+                url: '/chat/:user_id',
+                params: {
+                  user_id: null,
+                },
                 templateUrl: 'templates/chat/chat.html',
-                controller: 'Chat as vm'//,
+                controller: 'Chat as vm',
+                resolve: {
+                    getMessages: [
+                        'chat',
+                        '$stateParams',
+                        'chatFirebase',
+                        function (chat) {
+                            return chat.getRoom()
+                                .then(function (res) {
+                                    return res;
+                                })
+                        }],
+                    comments: ['chatFirebase', '$stateParams',
+                        function (chatFirebase, $stateParams) {
+                            chatFirebase.updateComment($stateParams);
+                        }]
+                }
                 //controllerAs: 'vm'
             })
             .state('profile', {
