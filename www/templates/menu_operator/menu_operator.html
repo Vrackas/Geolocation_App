@@ -1,0 +1,56 @@
+<ion-view view-title="Menu_operator" class="menuOperatorPage" hide-nav-bar="true">
+    <div>
+        <div class="bar bar-header bar-stable">
+            <!--<button class="button button-icon icon" ui-sref="login"><i class="icon ion-arrow-left-a"></i></button>-->
+            <h1 class="title">Menu</h1>
+            <button  class="button button-icon icon" ui-sref="profile"><i class="icon ion-navicon-round"></i></button>
+        </div>
+        <div class=" bar-subheader tabs-striped tabs-top tabs-background-stable tabs-color-dark" ng-show="$root.role == 6">
+            <div class="tabs">
+                <a class="tab-item" ui-sref="menu_operator.couriers_list">
+                    List
+                </a>
+                <a class="tab-item" ui-sref="menu_operator.geolocation">
+                    Map
+                </a>
+
+            </div>
+        </div>
+        <div class=" bar-subheader tabs-striped tabs-top tabs-background-stable tabs-color-dark" ng-show="$root.role == 4">
+            <div class="tabs">
+                <a class="tab-item" ui-sref="/*chat*/" >
+                    Chat
+                </a>
+                <a class="tab-item" ui-sref="menu_operator.geolocation">
+                    Map
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <ui-view>
+
+    </ui-view>
+
+
+    </div>
+    <!--<ion-content class="has-header">-->
+        <!--<div>-->
+            <!--<div class="list menu-operator-form" >-->
+                <!--<a class="item item-icon-left"  ui-sref="couriers_list" ng-if="$root.role == 6">-->
+                    <!--<i class="icon ion-chatbubble-working"></i>-->
+                    <!--Courier List-->
+                <!--</a>-->
+                <!--<a class="item item-icon-left"  ui-sref="chat" ng-if="$root.role == 4">-->
+                    <!--<i class="icon ion-chatbubble-working"></i>-->
+                    <!--Chat-->
+                <!--</a>-->
+                <!--<a class="item item-icon-left" ui-sref="geolocation">-->
+                    <!--<i class="icon ion-navigate"></i>-->
+                    <!--Location-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</ion-content>-->
+
+</ion-view>

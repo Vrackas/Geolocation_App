@@ -1,0 +1,51 @@
+<ion-view view-title="Profile" class="profilePage" hide-nav-bar="true">
+    <div>
+        <div class="bar bar-header bar-stable">
+            <button ng-click="$ionicGoBack()" class="back-button button-icon icon"><i class="icon ion-chevron-left"></i>
+            </button>
+            <h1 class="title">Profile</h1>
+        </div>
+    </div>
+    <ion-content>
+        <div>
+            <div class="username"><h1>{{vm.userInfo.user[0].username}}</h1></div>
+
+            <div class="list information-list">
+                <div class="item" ng-if="$root.role == 6">
+                    Your Status: Worker
+                </div>
+                <div class="item" ng-if="$root.role == 4">
+                    Your Status: Courier
+                </div>
+                <div class="item">
+                    Number Phone: {{vm.userInfo.user[0].phone}}
+                </div>
+                <div class="item">
+                    Card Number: {{vm.userInfo.user[0].card}}
+                </div>
+                <div class="item">
+                    Your email: {{vm.userInfo.user[0].email}}
+                </div>
+                <div class="item">
+                    Your Position: {{"lat:" + vm.userInfo.user[0].lat}},{{"lng:" + vm.userInfo.user[0].lng}}
+                </div>
+
+            </div>
+            <!--<div class="list menu-courier-form" >-->
+
+
+            <!--<a class="item item-icon-left" href="" ui-sref="chat">-->
+            <!--<i class="icon ion-chatbubble-working"></i>-->
+            <!--Chat-->
+            <!--</a>-->
+            <!--<a class="item item-icon-left" ui-sref="#">-->
+            <!--<i class="icon ion-navigate"></i>-->
+            <!--Location-->
+            <!--</a>-->
+            <!--</div>-->
+        </div>
+    </ion-content>
+    <div class="bar bar-footer bar-stable">
+        <button class="button button-clear pull-right" ng-click="clearStorage()" ui-sref="login">Exit</button>
+    </div>
+</ion-view>
