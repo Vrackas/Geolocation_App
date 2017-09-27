@@ -56,7 +56,7 @@
                         });
                     }
 
-                    console.log(hsdgfds);
+                    
                     console.log(servicesGeo.userLocation, list);
                     // function (UserService) {
                     //     return UserService.getCurriersList().then(function (res) {

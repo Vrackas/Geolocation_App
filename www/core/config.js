@@ -4,17 +4,17 @@
         .module('app')
         .config(mainConfig);
 
-    mainConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicLoadingConfig', '$ionicConfigProvider'];
+    mainConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicLoadingConfig', '$ionicConfigProvider', '$mdGestureProvider'];
 
     /**
      * Function for configurate angular app
      */
-    function mainConfig($stateProvider, $urlRouterProvider, $ionicLoadingConfig, $ionicConfigProvider) {
+    function mainConfig($stateProvider, $urlRouterProvider, $ionicLoadingConfig, $ionicConfigProvider, $mdGestureProvider) {
 
         // $ionicConfigProvider.views.maxCache(0);
         // $ionicConfigProvider.backButton.text('');
         // $ionicConfigProvider.views.swipeBackEnabled(false);
-        // $mdGestureProvider.skipClickHijack();
+        $mdGestureProvider.skipClickHijack();
 
         $urlRouterProvider.otherwise('/login');
         /**
@@ -139,6 +139,19 @@
                 resolve: {
                     allList: function (UserService) {
                         return UserService.getCourierListAll().then(function (res) {
+                            return res;
+
+                        });
+                    }
+                }
+            })
+            .state('courier_list_delete', {
+                url: '/courier_list_delete',
+                templateUrl: 'templates/courier_list_delete/courier_list_delete.html',
+                controller: 'Courier_list_delete as vm',
+                resolve: {
+                    deleteList: function (UserService) {
+                        return UserService.getCurriersList().then(function (res) {
                             return res;
 
                         });

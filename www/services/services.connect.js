@@ -15,7 +15,8 @@
                     getCourierListAll:  getCourierListAll,
                     getAllLocation: getAllLocation,
                     getUserInfo: getUserInfo,
-                    getAddCourier: getAddCourier
+                    getAddCourier: getAddCourier,
+                    getDeleteCourier: getDeleteCourier
                 };
                 function SendUsername(data) {
                     return http.post(url.user.GetUsername, data)
@@ -66,6 +67,12 @@
                 }
                 function getAddCourier (data) {
                     return http.get(url.user.GetAddCourier, data)
+                        .then(function (res) {
+                            return res;
+                        });
+                }
+                function getDeleteCourier (data) {
+                    return http.get(url.user.GetDeleteCourier, data)
                         .then(function (res) {
                             return res;
                         });

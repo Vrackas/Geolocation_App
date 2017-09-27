@@ -29,7 +29,10 @@
             },
             file: function (url, data) {
                 return requestFile(url, data);
-            }
+            },
+             delete: function (url, data) {
+                 return request('DELETE', url, data);
+             }
         };
 
 
