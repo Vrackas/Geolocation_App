@@ -42,7 +42,7 @@
                         setInfoWindowForMarker(item.username, marker);
                     });
 
-                    function setInfoWindowForMarker (username, m) {
+                    function setInfoWindowForMarker(username, m) {
                         infowindow = new google.maps.InfoWindow({
                             content: '<div id="content">' + username + '</div>'
                         });
@@ -56,6 +56,7 @@
                         });
                     }
 
+                    console.log(hsdgfds);
                     console.log(servicesGeo.userLocation, list);
                     // function (UserService) {
                     //     return UserService.getCurriersList().then(function (res) {
