@@ -7,7 +7,7 @@
     url.$inject = [];
 
     function url() {
-        var baseUrl = 'http://192.168.0.159/api/web/v1/';
+        var baseUrl = 'http://192.168.0.159git/api/web/v1/';
 
         return {
             user: {
