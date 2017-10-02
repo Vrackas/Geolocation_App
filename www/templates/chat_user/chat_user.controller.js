@@ -1,18 +1,19 @@
-
-
-
-
-
 ;(function () {
     'use strict';
 
     angular
         .module('app')
-        .controller('Chat', Chat);
+        .controller('Chat_user', ChatUser);
 
-    Chat.$inject = ['$ionicScrollDelegate', '$stateParams', '$localStorage', 'chatFirebase', '$rootScope', '$scope', 'getMessages'];
+    ChatUser.$inject = ['$ionicScrollDelegate', '$stateParams', '$localStorage', 'chatFirebase', '$rootScope', '$scope',
+        // 'getMessages'
+    ];
 
-    function Chat($ionicScrollDelegate, $stateParams, $localStorage, chatFirebase, $rootScope, $scope, getMessages) {
+    function ChatUser($ionicScrollDelegate, $stateParams, $localStorage, chatFirebase, $rootScope, $scope,
+                      // getMessages
+    ) {
+
+        chatFirebase.Test1({id: $stateParams.user_id});
 
         var vm = this;
         moment.locale('ru');
@@ -22,12 +23,16 @@
             message: null,
             text: null,
             user_id: null,
-            avatar: null,
+            avatar: null
         };
 
-        vm.avatarUsers = getMessages;
-        console.log('asd', vm.avatarUsers);
-        // vm.my_id = $localStorage.id;
+
+
+
+
+        // vm.avatarUsers = getMessages;
+        // console.log('asd', vm.avatarUsers);
+        vm.my_id = $localStorage.id;
         vm.senderName = $stateParams.senderName;
         // vm.message.date = parseInt((new Date(vm.selectedDate).getTime() / 1000).toFixed(0));
         // vm.my_id =
@@ -60,14 +65,6 @@
         }
     }
 })();
-
-
-
-
-
-
-
-
 
 
 // (function () {

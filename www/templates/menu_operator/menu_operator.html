@@ -1,11 +1,11 @@
-<ion-view view-title="Menu_operator" class="menuOperatorPage" hide-nav-bar="true">
+<ion-view view-title="Menu_operator" class="menuOperatorPage">
     <div>
-        <div class="bar bar-header bar-stable">
+        <div class="bar bar-header bar-calm has-tabs-top">
             <!--<button class="button button-icon icon" ui-sref="login"><i class="icon ion-arrow-left-a"></i></button>-->
-            <h1 class="title">Menu</h1>
+            <h1 class="title ">Menu</h1>
             <button  class="button button-icon icon" ui-sref="profile"><i class="icon ion-navicon-round"></i></button>
         </div>
-        <div class=" bar-subheader tabs-striped tabs-top tabs-background-stable tabs-color-dark" ng-show="$root.role == 6">
+        <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light" ng-show="$root.role == 6">
             <div class="tabs">
                 <a class="tab-item" ui-sref="menu_operator.couriers_list">
                     List
@@ -16,17 +16,18 @@
 
             </div>
         </div>
-        <div class=" bar-subheader tabs-striped tabs-top tabs-background-stable tabs-color-dark" ng-show="$root.role == 4">
-            <div class="tabs">
-                <a class="tab-item" ui-sref="/*chat*/" >
-                    Chat
-                </a>
-                <a class="tab-item" ui-sref="menu_operator.geolocation">
-                    Map
-                </a>
 
-            </div>
-        </div>
+        <!--<div class=" bar-subheader tabs-striped tabs-top tabs-background-stable tabs-color-default" ng-show="$root.role == 4">-->
+            <!--<div class="tabs">-->
+                <!--<a class="tab-item" ui-sref="/*chat*/" >-->
+                    <!--Chat-->
+                <!--</a>-->
+                <!--<a class="tab-item" ui-sref="menu_operator.geolocation">-->
+                    <!--Map-->
+                <!--</a>-->
+
+            <!--</div>-->
+        <!--</div>-->
     </div>
     <ui-view>
 

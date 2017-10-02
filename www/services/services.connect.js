@@ -16,7 +16,8 @@
                     getAllLocation: getAllLocation,
                     getUserInfo: getUserInfo,
                     getAddCourier: getAddCourier,
-                    getDeleteCourier: getDeleteCourier
+                    getDeleteCourier: getDeleteCourier,
+                    getRoom: getRoom
                 };
                 function SendUsername(data) {
                     return http.post(url.user.GetUsername, data)
@@ -74,6 +75,13 @@
                 function getDeleteCourier (data) {
                     return http.get(url.user.GetDeleteCourier, data)
                         .then(function (res) {
+                            return res;
+                        });
+                }
+                function getRoom(data) {
+                    return http.get(url.user.GetOneChatCourier, data)
+                        .then(function (res) {
+                            console.log(res);
                             return res;
                         });
                 }

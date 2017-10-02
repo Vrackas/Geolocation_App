@@ -9834,6 +9834,11 @@ ion-view.loginPage .navigate-button {
   display: flex;
   justify-content: space-between; }
 
+ion-view.loginPage .input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0; }
+
 ion-view.registerPage .back-button {
   color: #fff; }
   ion-view.registerPage .back-button .ion-chevron-left {
@@ -9877,6 +9882,9 @@ ion-view.menuOperatorPage .icon-footer-add {
   height: 30px;
   float: right; }
 
+ion-view.menuOperatorPage .bar {
+  top: 0; }
+
 ion-view.geolocationPage .maps {
   width: 100%;
   height: 100vh; }
@@ -9896,6 +9904,8 @@ ion-view.courierListDeletePage .list {
 
 ion-view.profilePage .username {
   margin-top: 35%; }
+  ion-view.profilePage .username h1 {
+    text-align: center; }
 
 ion-view.profilePage .information-list {
   margin-top: 33%; }
@@ -9903,10 +9913,16 @@ ion-view.profilePage .information-list {
 ion-view.profilePage .information-list div {
   margin-top: 2%; }
 
-ion-view.chatPage .new-message textarea {
-  resize: none; }
+ion-view.profilePage .information-list .item {
+  border: 0; }
 
-ion-view.chatPage div.speech {
+ion-view.chatUserPage .iconChat {
+  right: 20px; }
+
+ion-view.chatUserPage .iconLocation {
+  float: right; }
+
+ion-view.chatUserPage div.speech {
   width: 200px;
   min-height: 100px;
   border-radius: 10px;
@@ -9914,5 +9930,5 @@ ion-view.chatPage div.speech {
   padding: 5px;
   font-size: 14px; }
 
-ion-view.chatPage div.my-message {
+ion-view.chatUserPage div.my-message {
   margin: 20px 20px 0 auto; }

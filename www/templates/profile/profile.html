@@ -1,6 +1,6 @@
 <ion-view view-title="Profile" class="profilePage" hide-nav-bar="true">
     <div>
-        <div class="bar bar-header bar-stable">
+        <div class="bar bar-header bar-calm">
             <button ng-click="$ionicGoBack()" class="back-button button-icon icon"><i class="icon ion-chevron-left"></i>
             </button>
             <h1 class="title">Profile</h1>
@@ -12,29 +12,35 @@
 
             <div class="list information-list">
                 <div class="item" ng-if="$root.role == 6">
-                    Your Status: Worker
+                    Your Status:
+                  <p>Worker</p>
                 </div>
                 <div class="item" ng-if="$root.role == 4">
-                    Your Status: Courier
+                    Your Status:
+                  <p>Courier</p>
                 </div>
                 <div class="item">
-                    Number Phone: {{vm.userInfo.user[0].phone}}
+                    Number Phone:
+                   <p>{{vm.userInfo.user[0].phone}}</p>
                 </div>
                 <div class="item">
-                    Card Number: {{vm.userInfo.user[0].card}}
+                    Card Number:
+                   <p>{{vm.userInfo.user[0].card}}</p>
                 </div>
                 <div class="item">
-                    Your email: {{vm.userInfo.user[0].email}}
+                    Your email:
+                   <p>{{vm.userInfo.user[0].email}}</p>
                 </div>
                 <div class="item">
-                    Your Position: {{"lat:" + vm.userInfo.user[0].lat}},{{"lng:" + vm.userInfo.user[0].lng}}
+                    Your Position:
+                   <p>{{"lat:" + vm.userInfo.user[0].lat}},{{"lng:" + vm.userInfo.user[0].lng}}</p>
                 </div>
 
             </div>
             <!--<div class="list menu-courier-form" >-->
 
 
-            <!--<a class="item item-icon-left" href="" ui-sref="chat">-->
+            <!--<a class="item item-icon-left" href="" ui-srchat_userchat">-->
             <!--<i class="icon ion-chatbubble-working"></i>-->
             <!--Chat-->
             <!--</a>-->
@@ -45,7 +51,7 @@
             <!--</div>-->
         </div>
     </ion-content>
-    <div class="bar bar-footer bar-stable">
+    <div class="bar bar-footer bar-calm">
         <button class="button button-clear pull-right" ng-click="clearStorage()" ui-sref="login">Exit</button>
     </div>
 </ion-view>

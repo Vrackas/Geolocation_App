@@ -1,15 +1,19 @@
-<ion-view view-title="Chat" class="chatPage" hide-nav-bar="true">
+<ion-view view-title="Chat_user" class="chatUserPage" hide-nav-bar="true">
 
-    <ion-header-bar>
-        <ion-nav-bar class="back">
-            <ion-nav-buttons side="left">
-                <button class=" button-exit button" ui-sref="tabs.chat">
-                    <i class="ion-arrow-left-c"></i>
-                    &nbsp; {{vm.senderName}}
-                </button>
-            </ion-nav-buttons>
-        </ion-nav-bar>
-    </ion-header-bar>
+    <!--<ion-header-bar>-->
+        <!--<ion-nav-bar class="back">-->
+            <!--<ion-nav-buttons side="left">-->
+                <!--<button class=" button-exit button" ui-sref="tabs.chat">-->
+                    <!--<i class="ion-arrow-left-c"></i>-->
+                    <!--&nbsp; {{"gtnz"}}{{vm.senderName}}-->
+                <!--</button>-->
+            <!--</ion-nav-buttons>-->
+        <!--</ion-nav-bar>-->
+    <!--</ion-header-bar>-->
+    <div class="bar bar-header bar-calm">
+        <button ng-click="$ionicGoBack()" class="back-button button-icon icon"><i class="icon ion-chevron-left"></i></button>
+        <h1 class="title">{{vm.senderName}}</h1>
+    </div>
 
     <ion-content>
         <div>

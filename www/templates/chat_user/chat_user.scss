@@ -1,10 +1,15 @@
-ion-view.chatPage {
+ion-view.chatUserPage {
     .new-message {
         textarea {
-            resize: none;
+            //resize: none;
         }
     }
-
+    .iconChat {
+        right: 20px;
+    }
+    .iconLocation{
+        float:right;
+    }
     div.speech {
         width: 200px;
         min-height: 100px;

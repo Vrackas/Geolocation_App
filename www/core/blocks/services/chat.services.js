@@ -8,7 +8,7 @@
             'url',
             function (http, url) {
                 return {
-                    getRoom: getRoom,
+                    getRoom: getRoom
                     // GetChats: GetChats,
                     // GetChatsMessages: GetChatsMessages,
                     // CreateNewChat: CreateNewChat,
@@ -16,8 +16,9 @@
                 };
 
                 function getRoom(data) {
-                    return http.get(url.user.GetAllChatCourier, data)
+                    return http.get(url.user.GetOneChatCourier, data)
                         .then(function (res) {
+                            console.log(res);
                            return res;
                         });
                 }

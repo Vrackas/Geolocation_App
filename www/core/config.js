@@ -91,28 +91,25 @@
                     }
                 }
             })
-            .state('chat', {
-                url: '/chat/:user_id',
-                params: {
-                  user_id: null,
-                },
-                templateUrl: 'templates/chat/chat.html',
-                controller: 'Chat as vm',
+            .state('chat_user', {
+                url: '/chat_user/:user_id',
+                templateUrl: 'templates/chat_user/chat_user.html',
+                controller: 'Chat_user as vm',
                 resolve: {
-                    getMessages: [
-                        'chat',
-                        '$stateParams',
-                        'chatFirebase',
-                        function (chat) {
-                            return chat.getRoom()
-                                .then(function (res) {
-                                    return res;
-                                })
-                        }],
-                    comments: ['chatFirebase', '$stateParams',
-                        function (chatFirebase, $stateParams) {
-                            chatFirebase.updateComment($stateParams);
-                        }]
+                    // getMessages: [
+                    //     'chat',
+                    //     '$stateParams',
+                    //     'chatFirebase',
+                    //     function (chat) {
+                    //         return chat.getRoom()
+                    //             .then(function (res) {
+                    //                 return res;
+                    //             })
+                    //     }],
+                    // comments: ['chatFirebase', '$stateParams',
+                    //     function (chatFirebase, $stateParams) {
+                    //         chatFirebase.updateComment($stateParams);
+                    //     }]
                 }
                 //controllerAs: 'vm'
             })

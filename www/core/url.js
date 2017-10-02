@@ -7,7 +7,7 @@
     url.$inject = [];
 
     function url() {
-        var baseUrl = 'http://192.168.0.159/api/web/v1/';
+        var baseUrl = 'http://141c5019.ngrok.io/api/web/v1/';
 
         return {
             user: {
@@ -20,7 +20,8 @@
                 GetUserInfo: baseUrl + 'user/info-user',
                 GetAddCourier: baseUrl + 'user/add-courier',
                 GetDeleteCourier: baseUrl + 'user/delete-courier',
-                GetAllChatCourier: baseUrl + 'user/all'
+                GetAllChatCourier: baseUrl + 'user/all',
+                GetOneChatCourier: baseUrl + 'chat/one'
 
             }
         }
