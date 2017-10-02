@@ -6,6 +6,7 @@
 angular
     .module('app', [
         'ionic',
+        'ionic.cloud',
         'ngMap',
         'app.request',
         'factory.url',
@@ -17,6 +18,13 @@ angular
 
         // 'google-maps'
     ])
+    .config(function($ionicCloudProvider){
+       $ionicCloudProvider.init({
+        "core":{
+            "app_id":"abb405b0"
+        }
+       }) ;
+    })
 
     .run(function ($ionicPlatform, $localStorage, UserService, $rootScope, $state, servicesGeo, $interval, factoryChat, amMoment) {
         var config = {
@@ -63,7 +71,7 @@ angular
                         console.log($localStorage.role);
 
                         // console.log($rootScope.userLog);
-                        $state.go('menu_operator');
+                        $state.go('menu_operator.couriers_list');
 
                     });
 

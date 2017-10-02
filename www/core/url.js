@@ -7,7 +7,7 @@
     url.$inject = [];
 
     function url() {
-        var baseUrl = 'http://141c5019.ngrok.io/api/web/v1/';
+        var baseUrl = 'http://4e9796f4.ngrok.io/api/web/v1/';
 
         return {
             user: {

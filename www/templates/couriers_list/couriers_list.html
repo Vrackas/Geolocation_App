@@ -10,9 +10,9 @@
     <ion-list class="list">
       <ion-item class="item item-button-right" ng-repeat="courier in vm.list">
 
-          <h2 class="col col-50">{{courier.username}}</h2>
-          <button class="col col-25 button button-icon icon iconChat" ng-click="vm.SendId(courier)"><i class="icon ion-chatbox"></i></button>
-          <button class="col col-25 button button-icon icon iconLocation" ng-click="vm.chooseUser(courier)"><i class="icon ion-location"></i></button>
+          <h2>{{courier.username}}</h2>
+          <button class=" button button-icon icon iconChat" ng-click="vm.SendId(courier)"><i class="icon ion-chatbox"></i></button>
+          <button class=" button button-icon icon iconLocation" ng-click="vm.chooseUser(courier)"><i class="icon ion-location"></i></button>
       </ion-item>
 
     </ion-list>

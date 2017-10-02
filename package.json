@@ -9,7 +9,9 @@
         "gulp-sass": "^3.1.0"
     },
     "dependencies": {
+        "@ionic/cloud": "^0.16.0",
         "angular-material": "^1.1.4",
+        "bluebird": "^3.5.0",
         "cordova-android": "^6.2.3",
         "cordova-plugin-console": "^1.0.5",
         "cordova-plugin-device": "^1.1.4",

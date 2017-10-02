@@ -9869,6 +9869,9 @@ ion-view.courier_contact textarea.messagearea {
   width: 100%;
   height: 100px; }
 
+ion-view.courierListPage .iconChat {
+  right: 60px; }
+
 ion-view.courierListPage .list {
   margin-top: 12%; }
 
@@ -9915,12 +9918,6 @@ ion-view.profilePage .information-list div {
 
 ion-view.profilePage .information-list .item {
   border: 0; }
-
-ion-view.chatUserPage .iconChat {
-  right: 20px; }
-
-ion-view.chatUserPage .iconLocation {
-  float: right; }
 
 ion-view.chatUserPage div.speech {
   width: 200px;
