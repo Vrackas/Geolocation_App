@@ -10,7 +10,7 @@
     <ion-list class="list">
       <ion-item class="item item-button-right" ng-repeat="courier in vm.list">
 
-          <h2>{{courier.username}}</h2>
+          <h2 ng-click="vm.SendProfileId(courier)">{{courier.username}}</h2>
           <button class=" button button-icon icon iconChat" ng-click="vm.SendId(courier)"><i class="icon ion-chatbox"></i></button>
           <button class=" button button-icon icon iconLocation" ng-click="vm.chooseUser(courier)"><i class="icon ion-location"></i></button>
       </ion-item>
@@ -18,5 +18,5 @@
     </ion-list>
 
   </ion-content>
-    <div class="bar bar-footer bar-stable"><i class="icon ion-plus icon-footer-add" ui-sref="courier_list_add"></i><i class="icon ion-minus icon-footer-add" ui-sref="courier_list_delete"></i></div>
+    <!--<div class="bar bar-footer bar-stable"><i class="icon ion-plus icon-footer-add" ui-sref="courier_list_add"></i><i class="icon ion-minus icon-footer-add" ui-sref="courier_list_delete"></i></div>-->
 </ion-view>

@@ -7,17 +7,15 @@
 
     Menu_operator.$inject = ['$localStorage', '$scope', '$rootScope', 'UserService'];
 
-    function Menu_operator($localStorage, $scope, $rootScope, UserService) {
-        // var vm =this;
+    function Menu_operator($localStorage, $scope, $rootScope, UserService, ngMaterial) {
+        var vm =this;
        $scope.clearStorage = function () {
            delete $localStorage.auth_key;
-        }
-        // $scope.sendId = function () {
-        //         return UserService.getUserInfo($rootScope.user.id).then(function (res) {
-        //             return res;
-        //         });
-        //
-        // }
-
+        };
     }
 })();
+
+
+
+
+

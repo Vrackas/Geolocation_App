@@ -92,7 +92,7 @@
                 }
             })
             .state('chat_user', {
-                url: '/chat_user/:user_id',
+                url: '/chat_user/?user_id&senderName&roomId',
                 templateUrl: 'templates/chat_user/chat_user.html',
                 controller: 'Chat_user as vm',
                 resolve: {
@@ -127,6 +127,14 @@
                         });
                     }
                 }
+
+            })
+            .state('profile_for_list', {
+                url: '/profile_for_list',
+                templateUrl: 'templates/profile_for_list/profile_for_list.html',
+                controller: 'ProfileForList as vm',
+                //controllerAs: 'vm'
+
 
             })
             .state('courier_list_add', {

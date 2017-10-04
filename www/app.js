@@ -8,6 +8,7 @@ angular
         'ionic',
         'ionic.cloud',
         'ngMap',
+        "ngMaterial",
         'app.request',
         'factory.url',
         'factories.module',
@@ -71,7 +72,7 @@ angular
                         console.log($localStorage.role);
 
                         // console.log($rootScope.userLog);
-                        $state.go('menu_operator.couriers_list');
+                        $state.go('menu_operator');
 
                     });
 

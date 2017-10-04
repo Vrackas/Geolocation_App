@@ -15,6 +15,7 @@
                     getCourierListAll:  getCourierListAll,
                     getAllLocation: getAllLocation,
                     getUserInfo: getUserInfo,
+                    getProfileInfo: getProfileInfo,
                     getAddCourier: getAddCourier,
                     getDeleteCourier: getDeleteCourier,
                     getRoom: getRoom
@@ -62,6 +63,12 @@
                 }
                 function getUserInfo (data) {
                     return http.get(url.user.GetUserInfo, data)
+                        .then(function (res) {
+                            return res;
+                        });
+                }
+                function getProfileInfo (data) {
+                    return http.get(url.user.GetProfileInfo, data)
                         .then(function (res) {
                             return res;
                         });

@@ -39,12 +39,13 @@
                             map: map
                         });
 
-                        setInfoWindowForMarker(item.username, marker);
+                        setInfoWindowForMarker(item.username, item.email, item.phone, item.card, item.role, marker);
                     });
 
-                    function setInfoWindowForMarker(username, m) {
+                    function setInfoWindowForMarker(username, email, phone, card, role, m) {
                         infowindow = new google.maps.InfoWindow({
-                            content: '<div id="content">' + username + '</div>'
+                            content: '<div id="content"><div></div>' + username + '</div><br><div>Email: ' + email + '</div><br><div>Phone: ' + phone + '</div><br><div>Card Number: ' + card + '</div><br></div>'
+                            // <div>Your Status: ' + if(role == 6){'Worker'}if(role == 4){'Courier'} + '</div>
                         });
 
                         createMarkerListener(m, infowindow);
@@ -56,7 +57,7 @@
                         });
                     }
 
-                    
+
                     console.log(servicesGeo.userLocation, list);
                     // function (UserService) {
                     //     return UserService.getCurriersList().then(function (res) {

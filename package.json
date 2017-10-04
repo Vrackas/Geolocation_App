@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@ionic/cloud": "^0.16.0",
-        "angular-material": "^1.1.4",
+        "angular-material": "^1.1.5",
         "bluebird": "^3.5.0",
         "cordova-android": "^6.2.3",
         "cordova-plugin-console": "^1.0.5",

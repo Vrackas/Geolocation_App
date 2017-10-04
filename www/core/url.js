@@ -7,7 +7,7 @@
     url.$inject = [];
 
     function url() {
-        var baseUrl = 'http://4e9796f4.ngrok.io/api/web/v1/';
+        var baseUrl = 'http://f1cbd3a2.ngrok.io/api/web/v1/';
 
         return {
             user: {
@@ -18,6 +18,7 @@
                 GetCourierList: baseUrl + 'user/get-couriers',
                 GetAllLocation: baseUrl + 'user/all-users',
                 GetUserInfo: baseUrl + 'user/info-user',
+                GetProfileInfo: baseUrl + 'user/one-user',
                 GetAddCourier: baseUrl + 'user/add-courier',
                 GetDeleteCourier: baseUrl + 'user/delete-courier',
                 GetAllChatCourier: baseUrl + 'user/all',

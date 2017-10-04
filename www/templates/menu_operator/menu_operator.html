@@ -1,9 +1,26 @@
 <ion-view view-title="Menu_operator" class="menuOperatorPage">
     <div>
         <div class="bar bar-header bar-calm has-tabs-top">
-            <!--<button class="button button-icon icon" ui-sref="login"><i class="icon ion-arrow-left-a"></i></button>-->
+
             <h1 class="title ">Menu</h1>
-            <button  class="button button-icon icon" ui-sref="profile"><i class="icon ion-navicon-round"></i></button>
+
+            <md-menu>
+                <md-button class="md-icon-button button button-icon icon item-button-right" ng-click="$mdMenu.open()" aria-label="more">
+                    <i class="icon ion-navicon-round"></i>
+                </md-button>
+                <md-menu-content width="1">
+                    <md-menu-item>
+                        <md-button ui-sref="profile">
+                            Profile
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button    >
+                            Exit
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
         </div>
         <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light" ng-show="$root.role == 6">
             <div class="tabs">
@@ -16,42 +33,25 @@
 
             </div>
         </div>
+    </div>
+        <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light" ng-show="$root.role == 4">
+            <div class="tabs">
+                <a class="tab-item" ui-sref="chat_user>
+                    Chat
+                </a>
+                <a class="tab-item" ui-sref="menu_operator.geolocation">
+                    Map
+                </a>
 
-        <!--<div class=" bar-subheader tabs-striped tabs-top tabs-background-stable tabs-color-default" ng-show="$root.role == 4">-->
-            <!--<div class="tabs">-->
-                <!--<a class="tab-item" ui-sref="/*chat*/" >-->
-                    <!--Chat-->
-                <!--</a>-->
-                <!--<a class="tab-item" ui-sref="menu_operator.geolocation">-->
-                    <!--Map-->
-                <!--</a>-->
-
-            <!--</div>-->
-        <!--</div>-->
+            </div>
+        </div>
     </div>
     <ui-view>
 
+
+
+
+
     </ui-view>
-
-
     </div>
-    <!--<ion-content class="has-header">-->
-        <!--<div>-->
-            <!--<div class="list menu-operator-form" >-->
-                <!--<a class="item item-icon-left"  ui-sref="couriers_list" ng-if="$root.role == 6">-->
-                    <!--<i class="icon ion-chatbubble-working"></i>-->
-                    <!--Courier List-->
-                <!--</a>-->
-                <!--<a class="item item-icon-left"  ui-sref="chat" ng-if="$root.role == 4">-->
-                    <!--<i class="icon ion-chatbubble-working"></i>-->
-                    <!--Chat-->
-                <!--</a>-->
-                <!--<a class="item item-icon-left" ui-sref="geolocation">-->
-                    <!--<i class="icon ion-navigate"></i>-->
-                    <!--Location-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</ion-content>-->
-
 </ion-view>
