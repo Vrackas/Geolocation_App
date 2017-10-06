@@ -14,6 +14,7 @@
             'ngAria',
             'ngMap',
             'angularMoment',
+            'ui.mask',
 
             /*
              * Our reusable cross app code modules

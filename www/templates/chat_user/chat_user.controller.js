@@ -29,6 +29,7 @@
             //         });
             // }
             vm.room_id = $stateParams.roomId;
+            vm.numberPhone = $stateParams.numberPhone;
             chatFirebase.updateComment(vm.room_id);
 
             moment.locale('ru');
@@ -48,17 +49,19 @@
                 // }
                 $timeout(function () {
                     vm.messageRes = data.comments;
+                    // chatFirebase.updateComment(vm.room_id);
+                    scrollBottom();
                 });
             });
 
-            // $scope.$on('$destroy', function () {
-            //     listener();
-            //     chatFirebase.removeListener(vm.room_id);
-            // });
+            chatFirebase.updateComment(vm.room_id);
+
+            $scope.$on('$destroy', function () {
+                listener();
+                chatFirebase.removeListener(vm.room_id);
+            });
 
 
-            // vm.avatarUsers = getMessages;
-            // console.log('asd', vm.avatarUsers);
             vm.my_id = $localStorage.id;
             vm.senderName = $stateParams.senderName;
             // vm.message.date = parseInt((new Date(vm.selectedDate).getTime() / 1000).toFixed(0));
@@ -72,9 +75,9 @@
             // });
 
             vm.sendMessage = sendMessage;
-            // vm.scrollBottom = scrollBottom;
+            vm.scrollBottom = scrollBottom;
 
-            // scrollBottom();
+            scrollBottom();
 
             /**
              * отправка vm.message.text
@@ -82,11 +85,12 @@
              */
 
             function sendMessage() {
-                chatFirebase.newComment(vm.message);
+                chatFirebase.newComment(vm.message, vm.room_id);
+                vm.message.text = null;
             }
 
-            // function scrollBottom() {
-            //     $ionicScrollDelegate.scrollBottom();
-            // }
+            function scrollBottom() {
+                $ionicScrollDelegate.scrollBottom();
+            }
         }
     })();

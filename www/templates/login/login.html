@@ -8,8 +8,8 @@
                     <!--<label class="item ion-person item-input item-floating-label"><input type="text" ng-model="user.username" placeholder="Username"> </label>-->
                     <!--<label class="item ion-unlocked item-input item-floating-label"><input type="password" ng-model="user.password" placeholder="Password"> </label>-->
                     <label class="item item-input item-floating-label input">
-                        <span class="input-label">Username</span>
-                        <input type="text" ng-model="user.username" placeholder="Username">
+                        <span class="input-label">Phone number</span>
+                        <input type="text" ng-model="user.phone"  ui-mask="+38 (999) 999 - 99 - 99">
                     </label>
                     <label class="item item-input item-floating-label input">
                         <span class="input-label">Password</span>
@@ -38,3 +38,4 @@
 
     </ion-content>
 </ion-view>
+cordova plugin add phonegap-plugin-push --variable SENDER_ID=441975417143 --save

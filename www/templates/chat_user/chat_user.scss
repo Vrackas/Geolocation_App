@@ -1,7 +1,7 @@
 ion-view.chatUserPage {
     .new-message {
         textarea {
-            //resize: none;
+            resize: none;
         }
     }
 
@@ -20,6 +20,9 @@ ion-view.chatUserPage {
 
     .message-content{
 
+    }
+    ion-content{
+        margin-top: 8% ;
     }
     //
     //.message-area {

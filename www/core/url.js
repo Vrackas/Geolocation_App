@@ -7,7 +7,7 @@
     url.$inject = [];
 
     function url() {
-        var baseUrl = 'http://f1cbd3a2.ngrok.io/api/web/v1/';
+        var baseUrl = 'http://geolocation.grassbusinesslabs.tk/api/web/v1/';
 
         return {
             user: {
@@ -22,7 +22,9 @@
                 GetAddCourier: baseUrl + 'user/add-courier',
                 GetDeleteCourier: baseUrl + 'user/delete-courier',
                 GetAllChatCourier: baseUrl + 'user/all',
-                GetOneChatCourier: baseUrl + 'chat/one'
+                GetOneChatCourier: baseUrl + 'chat/one',
+                GetWorkerList: baseUrl + 'user/get-worker'
+
 
             }
         }

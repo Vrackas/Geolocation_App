@@ -12,7 +12,12 @@
     <!--</ion-header-bar>-->
     <div class="bar bar-header bar-calm">
         <button ng-click="$ionicGoBack()" class="back-button button-icon icon"><i class="icon ion-chevron-left"></i></button>
+        <!--<button ui-sref="menu_operator" class="back-button button-icon icon" ng-show="$root.role == 4"><i class="icon ion-chevron-left"></i></button>-->
         <h1 class="title">{{vm.senderName}}</h1>
+        <a class="button button-calm" href="tel:{{vm.numberPhone}}">
+            <!--<i class="icon ion-android-call"></i>-->
+            <i class="icon ion-ios-telephone-outline"></i>
+        </a>
     </div>
 
     <ion-content>
@@ -33,7 +38,9 @@
     </ion-content>
     <ion-footer-bar>
         <div class="new-message" flex="100" layout="row" layout-align="space-between">
+            <!--<ion-input ng-model="vm.message.text" type="text" placeholder="Ваше повідомлення..."></ion-input>-->
             <textarea flex="90" ng-model="vm.message.text" placeholder="Ваше повідомлення..."></textarea>
+            <!--<ion-label color="primary"><button ng-click="vm.sendMessage()" class="button button-icon icon ion-android-send"></ion-label>-->
             <button flex="10" ng-click="vm.sendMessage()" class="button button-icon icon ion-android-send">
             </button>
         </div>

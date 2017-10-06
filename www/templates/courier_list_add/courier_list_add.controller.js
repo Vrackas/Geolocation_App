@@ -9,7 +9,7 @@
 
     function CourierListAdd($rootScope, allList, $stateParams, UserService, $scope) {
 
-        const vm = this;
+        var vm = this;
         console.log(allList);
         vm.allList = allList;
 

@@ -9,7 +9,7 @@
 
     function CourierListDelete($rootScope, deleteList, $stateParams, UserService, $scope) {
 
-        const vm = this;
+        var vm = this;
         console.log(deleteList);
         vm.deleteList = deleteList;
 

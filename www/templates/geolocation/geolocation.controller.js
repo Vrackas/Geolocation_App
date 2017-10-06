@@ -98,7 +98,7 @@
     Geolocation.$inject=['ngMap'];
 
     function Geolocation(ngMap) {
-        const vm = this;
+        var vm = this;
         // NgMap.getMap().then(function (map) {
         //         debugger
         //         // google.maps.event.trigger(map, "resize");

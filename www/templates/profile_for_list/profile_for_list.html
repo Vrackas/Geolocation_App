@@ -20,8 +20,14 @@
                     <p>Courier</p>
                 </div>
                 <div class="item">
-                    Number Phone:
-                    <p>{{vm.profileInfo.user[0].phone}}</p>
+                    <div flex="90">
+                        Number Phone:
+                        <p>{{vm.profileInfo.user[0].phone}}</p>
+                    </div>
+                    <a flex="10" class="button button-icon icon iconPhone" href="tel:{{vm.profileInfo.user[0].phone}}">
+                        <!--<i class="icon ion-android-call"></i>-->
+                        <i class="icon ion-ios-telephone-outline"></i>
+                    </a>
                 </div>
                 <div class="item">
                     Card Number:

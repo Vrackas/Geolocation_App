@@ -42,7 +42,7 @@
 
                 console.log(room_id);
 
-                function newComment(message) {
+                function newComment(message, room_id) {
                     // vm.room_id = getMessages[0].room_id;
                     var commentDb = factoryChat.firebaseApp.database();
                     var comment = commentDb.ref('dialogs/' + room_id + '/').push();
@@ -65,6 +65,7 @@
                         $rootScope.$broadcast('comments_load', {
                             comments: snapshot.val()
                         });
+                        console.log(room_id);
                     });
                 }
                 function removeListener(room_id) {

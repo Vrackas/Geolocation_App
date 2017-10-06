@@ -9878,6 +9878,15 @@ ion-view.courierListPage .list {
 ion-view.courierListPage .bar-footer .icon {
   margin-right: 20px; }
 
+ion-view.workerListPage .iconChat {
+  right: 60px; }
+
+ion-view.workerListPage .list {
+  margin-top: 12%; }
+
+ion-view.workerListPage .bar-footer .icon {
+  margin-right: 20px; }
+
 ion-view.menuOperatorPage .menu-operator-form {
   margin-top: 12%; }
 
@@ -9950,6 +9959,9 @@ ion-view.profileForListPage .information-list div {
 ion-view.profileForListPage .information-list .item {
   border: 0; }
 
+ion-view.chatUserPage .new-message textarea {
+  resize: none; }
+
 ion-view.chatUserPage div.speech {
   width: 200px;
   min-height: 100px;
@@ -9960,3 +9972,6 @@ ion-view.chatUserPage div.speech {
 
 ion-view.chatUserPage div.my-message {
   margin: 20px 20px 0 auto; }
+
+ion-view.chatUserPage ion-content {
+  margin-top: 8%; }

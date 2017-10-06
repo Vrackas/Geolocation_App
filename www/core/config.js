@@ -4,12 +4,12 @@
         .module('app')
         .config(mainConfig);
 
-    mainConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicLoadingConfig', '$ionicConfigProvider', '$mdGestureProvider'];
+    mainConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicLoadingConfig', '$ionicConfigProvider', '$mdGestureProvider', '$ionicCloudProvider'];
 
     /**
      * Function for configurate angular app
      */
-    function mainConfig($stateProvider, $urlRouterProvider, $ionicLoadingConfig, $ionicConfigProvider, $mdGestureProvider) {
+    function mainConfig($stateProvider, $urlRouterProvider, $ionicLoadingConfig, $ionicConfigProvider, $mdGestureProvider, $ionicCloudProvider) {
 
         // $ionicConfigProvider.views.maxCache(0);
         // $ionicConfigProvider.backButton.text('');
@@ -23,6 +23,21 @@
         angular.extend($ionicLoadingConfig, {
             noBackdrop: true
         });
+
+
+            $ionicCloudProvider.init({
+                "core":{
+                    "app_id":"abb405b0"
+                },
+                "push": {
+                    "sender_id": "441975417143",
+                    "pluginConfig": {
+                        "android": {
+                            "iconColor": "#343434"
+                        }
+                    }
+                }
+            }) ;
 
         /**
          * Configuring state provider
@@ -78,6 +93,18 @@
                     }
                 }
             })
+            .state('menu_operator.workers_list', {
+                url: '/workers_list',
+                templateUrl: 'templates/workers_list/workers_list.html',
+                controller: 'Workers_list as vm',
+                resolve: {
+                    workerList: function (UserService) {
+                        return UserService.getWorkerList().then(function (res) {
+                            return res;
+                        });
+                    }
+                }
+            })
             .state('menu_operator.geolocation', {
                 url: '/geolocation',
                 templateUrl: 'templates/geolocation/geolocation.html',
@@ -92,7 +119,7 @@
                 }
             })
             .state('chat_user', {
-                url: '/chat_user/?user_id&senderName&roomId',
+                url: '/chat_user/?user_id&senderName&roomId&numberPhone',
                 templateUrl: 'templates/chat_user/chat_user.html',
                 controller: 'Chat_user as vm',
                 resolve: {
@@ -130,10 +157,19 @@
 
             })
             .state('profile_for_list', {
-                url: '/profile_for_list',
+                url: '/profile_for_list/?id',
                 templateUrl: 'templates/profile_for_list/profile_for_list.html',
                 controller: 'ProfileForList as vm',
                 //controllerAs: 'vm'
+                resolve: {
+                    profileInfo: function (UserService, $stateParams) {
+                        return UserService.getProfileInfo($stateParams).then(function (res) {
+                            return res;
+                            // console.log(res);
+
+                        });
+                    }
+                }
 
 
             })
@@ -162,6 +198,12 @@
                         });
                     }
                 }
+            })
+            .state('notifications', {
+                url: '/notifications',
+                templateUrl: 'templates/notifications/notifications.html',
+                controller: 'Notifications as vm',
+                // controllerAs: 'vm'
             })
 
         ;

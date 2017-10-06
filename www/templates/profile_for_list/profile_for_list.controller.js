@@ -5,18 +5,19 @@
         .module('app')
         .controller('ProfileForList', ProfileForList);
 
-    ProfileForList.$inject = [ '$scope', 'UserService', '$rootScope', '$stateParams'];
+    ProfileForList.$inject = [ '$scope', 'UserService', '$rootScope', '$stateParams', 'profileInfo'];
 
-    function ProfileForList( $scope, UserService, $rootScope, $stateParams) {
+    function ProfileForList( $scope, UserService, $rootScope, $stateParams, profileInfo) {
         var vm = this;
         vm.ProfileInfo = ProfileInfo;
+        vm.profileInfo = profileInfo;
         vm.id={
             id: $stateParams.id
         };
-        vm.ProfileInfo();
+        // vm.ProfileInfo();
 
         function ProfileInfo(UserService) {
-             UserService.getProfileInfo(id).then(function (res) {
+             UserService.getUserInfo(id).then(function (res) {
                 vm.profileInfo = res;
                 return res;
             });

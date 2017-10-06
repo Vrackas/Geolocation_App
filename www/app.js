@@ -19,13 +19,21 @@ angular
 
         // 'google-maps'
     ])
-    .config(function($ionicCloudProvider){
-       $ionicCloudProvider.init({
-        "core":{
-            "app_id":"abb405b0"
-        }
-       }) ;
-    })
+    // .config(function($ionicCloudProvider){
+    //     $ionicCloudProvider.init({
+    //         "core":{
+    //             "app_id":"abb405b0"
+    //         },
+    //         "push": {
+    //             "sender_id": "441975417143",
+    //             "pluginConfig": {
+    //                 "android": {
+    //                     "iconColor": "#343434"
+    //                 }
+    //             }
+    //         }
+    //     }) ;
+    // })
 
     .run(function ($ionicPlatform, $localStorage, UserService, $rootScope, $state, servicesGeo, $interval, factoryChat, amMoment) {
         var config = {
@@ -72,8 +80,14 @@ angular
                         console.log($localStorage.role);
 
                         // console.log($rootScope.userLog);
-                        $state.go('menu_operator');
-
+                        // $state.go('menu_operator');
+                        if($rootScope.role == 6){
+                            $state.go('menu_operator.couriers_list');
+                        } if ($rootScope.role == 4){
+                            // $rootScope.roomId =res.user[0].room_id;
+                            // $state.go('chat_user',{user_id: res.user[0].id, roomId: res.user[0].room_id});
+                            $state.go('menu_operator.workers_list');
+                        }
                     });
 
                 $interval(servicesGeo.SendGeolocation, 120000);

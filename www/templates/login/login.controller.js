@@ -8,9 +8,9 @@
         .module('app')
         .controller('Login', Login);
 
-    Login.$inject = ['$rootScope', '$state', 'UserService', '$scope', '$localStorage'];
+    Login.$inject = ['$rootScope', '$state', 'UserService', '$scope', '$localStorage', '$ionicPush'];
 
-    function Login($rootScope, $state, UserService, $scope, $localStorage) {
+    function Login($rootScope, $state, UserService, $scope, $localStorage, $ionicPush) {
 
 
         var vm = this;
@@ -18,7 +18,7 @@
         // vm.SendLogin = SendLogin;
 
        $scope.user = {
-            username: "",
+            phone: "",
             password: ""
 
         };
@@ -39,8 +39,24 @@
                     console.log($localStorage.role)
 
                     console.log($rootScope.userLog);
-                    $state.go('menu_operator');
+                    if($rootScope.role == 6){
+                        $state.go('menu_operator.couriers_list');
+                    } if ($rootScope.role == 4){
+                        // $rootScope.roomId =res.user[0].room_id;
+                        // $state.go('chat_user',{user_id: res.user[0].id, roomId: res.user[0].room_id});
+                        $state.go('menu_operator.workers_list');
+                    }
+                    $scope.register();
+
                 })
+        };
+
+        $scope.register =function () {
+            $ionicPush.register().then(function(t) {
+                return $ionicPush.saveToken(t);
+            }).then(function(t) {
+                console.log('Token saved:', t.token);
+            });
         };
         console.log('test');
         $scope.test = function (){

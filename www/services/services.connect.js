@@ -18,7 +18,8 @@
                     getProfileInfo: getProfileInfo,
                     getAddCourier: getAddCourier,
                     getDeleteCourier: getDeleteCourier,
-                    getRoom: getRoom
+                    getRoom: getRoom,
+                    getWorkerList: getWorkerList
                 };
                 function SendUsername(data) {
                     return http.post(url.user.GetUsername, data)
@@ -87,6 +88,13 @@
                 }
                 function getRoom(data) {
                     return http.get(url.user.GetOneChatCourier, data)
+                        .then(function (res) {
+                            console.log(res);
+                            return res;
+                        });
+                }
+                function getWorkerList(data) {
+                    return http.get(url.user.GetWorkerList, data)
                         .then(function (res) {
                             console.log(res);
                             return res;
