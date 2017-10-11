@@ -1,0 +1,51 @@
+{
+    "name": "myApp",
+    "version": "0.0.1",
+    "description": "An Ionic project",
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "^3.7.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^3.1.0"
+    },
+    "dependencies": {
+        "@ionic/cloud": "^0.16.0",
+        "angular-material": "^1.1.5",
+        "bluebird": "^3.5.0",
+        "cordova-android": "^6.2.3",
+        "cordova-android-play-services-gradle-release": "^1.1.1",
+        "cordova-plugin-console": "^1.0.5",
+        "cordova-plugin-device": "^1.1.4",
+        "cordova-plugin-fcm": "^2.1.2",
+        "cordova-plugin-googlemaps": "^2.0.3",
+        "cordova-plugin-splashscreen": "^4.0.3",
+        "cordova-plugin-statusbar": "^2.2.1",
+        "cordova-plugin-whitelist": "^1.3.1",
+        "google-maps": "^3.2.1",
+        "ionic-plugin-keyboard": "^2.2.1",
+        "phonegap-plugin-push": "^2.0.0"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-googlemaps": {
+                "API_KEY_FOR_ANDROID": "AIzaSyCqUG72dWvyQexUSogVT1fadrUY5qTB20g"
+            },
+            "cordova-plugin-console": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "ionic-plugin-keyboard": {},
+            "phonegap-plugin-push": {
+                "SENDER_ID": "441975417143"
+            },
+            "cordova-android-play-services-gradle-release": {
+                "PLAY_SERVICES_VERSION": "10.+"
+            },
+            "cordova-plugin-fcm": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
